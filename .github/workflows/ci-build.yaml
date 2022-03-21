@@ -24,3 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - run: npm run build --if-present
+
+  release:
+     runs-on: ubuntu-latest
+      - uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
