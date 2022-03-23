@@ -26,27 +26,35 @@ export default class CommonList extends React.Component {
       >
         <div className={mergeClassNames(BulmaCSS.container, BulmaCSS['is-medium'], Styles.commonListContainer)}>
           {items.map((item) => {
-            const { authority, authorityWebSite, authorityMeta, rightSide, title, description, descriptionTags } = item;
+            const { authority, authorityWebSite, authorityMeta, rightSide, title, description, descriptionTags, bullets } = item;
             return (
-              <div className={mergeClassNames(BulmaCSS.content, Styles.avoidBreakingOnPrint)}>
-                <div className={mergeClassNames(BulmaCSS.level, BulmaCSS['is-marginless'], BulmaCSS['is-paddingless'])}>
-                  <h5 className={mergeClassNames(BulmaCSS.title, BulmaCSS['is-marginless'], BulmaCSS['level-left'], BulmaCSS['is-size-5'])}>{title}
-                  </h5>
-                  <span className={mergeClassNames(BulmaCSS['level-right'])}>{rightSide}</span>
+              <div>
+                <div id="item-main" className={mergeClassNames(BulmaCSS.content, Styles.avoidBreakingOnPrint)}>
+                  <div className={mergeClassNames(BulmaCSS.level, BulmaCSS['is-marginless'], BulmaCSS['is-paddingless'])}>
+                    <h5 className={mergeClassNames(BulmaCSS.title, BulmaCSS['is-marginless'], BulmaCSS['level-left'], BulmaCSS['is-size-5'])}>{title}
+                    </h5>
+                    <span className={mergeClassNames(BulmaCSS['level-right'])}>{rightSide}</span>
+                  </div>
+                  <h6
+                    className={mergeClassNames(BulmaCSS.subtitle, Styles.companyTitle, BulmaCSS['is-size-6'])}
+                  >
+                    {authorityWebSite ? <a href={getFixedUrl(authorityWebSite)} target='_blank'>{authority}</a> : authority}
+                  </h6>
+                  {authorityMeta
+                    ? <span className={mergeClassNames(Styles.companyMeta)}>{`(${authorityMeta})`}</span>
+                    : null}
+                  <p>
+                    {descriptionTags && <PureTagList tags={descriptionTags} tagClass='is-info' />}
+                    {description}
+                  </p>
                 </div>
-                <h6
-                  className={mergeClassNames(BulmaCSS.subtitle, Styles.companyTitle, BulmaCSS['is-size-6'])}
-                >
-                  {authorityWebSite ? <a href={getFixedUrl(authorityWebSite)} target='_blank' >{authority}</a> : authority}
-                </h6>
-                { authorityMeta
-                  ? <span className={mergeClassNames(Styles.companyMeta)}>{`(${authorityMeta})`}</span>
-                  : null}
-                <p>
-                  {descriptionTags && <PureTagList tags={descriptionTags} tagClass='is-info' /> }
-                  {description}
-                </p>
-              </div>);
+                <div id="item-bullets" className={mergeClassNames(BulmaCSS.content, Styles.avoidBreakingOnPrint)}>
+                  {bullets 
+                    ? bullets.map((bullet) => { return <li>{bullet}</li> })
+                    : null}
+                </div>
+              </div>
+             );
           })}
         </div>
       </Section>
