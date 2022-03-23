@@ -17,17 +17,19 @@ export default class Section extends React.Component {
   }
 
   render() {
-    const { icon, xtraClassName } = this.props;
+    let { icon, xtraClassName } = this.props;
     return (
       <div className={mergeClassNames(BulmaCSS.container, Styles.sectionContainer, xtraClassName)}>
         <div className={mergeClassNames(BulmaCSS.columns)}>
           <div className={mergeClassNames(BulmaCSS['is-full'], BulmaCSS.column)}>
+            { (!this.props.hasNoHeader ? true : false) &&
             <h4 className={mergeClassNames(BulmaCSS.title, Styles.sectionTitle, BulmaCSS['is-size-4'], Styles.avoidBreakingOnPrint)}>
               <span className={Styles.sectionIcon}>
                 <FontAwesomeIcon icon={['fas', icon]} />
               </span>
               {this.props.title}
             </h4>
+            }
             <hr className={Styles.diver} />
             {this.props.content &&
             <div className={mergeClassNames(Styles.sectionContent)}>
