@@ -10,13 +10,15 @@ import ExperiencesList from './Components/ExperiencesList'
 import ProjectsList from './Components/ProjectsList'
 import TagsList from './Components/TagsList'
 import CommonList from './Components/CommonList'
+import BasicTextBox from './Components/BasicTextBox'
 
 const componnentMap = {
   'experiences-list': ExperiencesList,
   text: Section,
   'projects-list': ProjectsList,
   'tag-list': TagsList,
-  'common-list': CommonList
+  'common-list': CommonList,
+  'basic-text': BasicTextBox
 };
 
 export default class ReactCV extends Component {
