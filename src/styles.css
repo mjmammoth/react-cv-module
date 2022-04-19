@@ -2,7 +2,7 @@
 
 .cvContainer {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  min-height: 500px
+  min-height: 500px;
 }
 
 .appContainer {
@@ -13,10 +13,10 @@
 
 .sectionIcon {
   font-size: 20px;
+  color: white;
   margin-right: 0.75em;
   border-radius: 100%;
   background: #2d7788;
-  color: white;
   width: 48px;
   height: 48px;
   display: inline-flex;
@@ -124,4 +124,17 @@ body {
 .branding {
   margin-top: 20px;
   text-align: center;
+  color: white
 }
+
+.outsideLink {
+  color: #21E3EB;
+}
+
+.outsideLink:hover {
+  /*font-family: monospace;*/
+  color: #00FFB8;
+  font-size: 103%;
+}
+
+/*.outsideLink:visited {color: #0A8858;}*/

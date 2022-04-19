@@ -85,8 +85,10 @@ export default class ReactCV extends Component {
           </div>
         </main>
         {this.props.branding && <div className={Styles.branding}>
-          I created this CV by using a modified <a href='https://github.com/mjmammoth/react-cv-module' targt='_blank'>React-CV</a> module.
-          The module is then used in a CICD pipeline in <a href='https://github.com/mjmammoth/cicv' targt='_blank'>this CICV repository</a> which uses <a href='https://github.com/mjmammoth/cicv/tree/main/.github/workflows' targt='_blank'>GitHub Actions</a> to build, push and deploy to my <a href='https://github.com/mjmammoth/iac-odroid' targt='_blank'>personal k8s cluster</a>.
+          I created this CV by modifying a <a href='https://github.com/mjmammoth/react-cv-module' className={Styles.outsideLink} targt='_blank'>React-CV</a> module
+          which is then used in my <a href='https://github.com/mjmammoth/cicv' className={Styles.outsideLink} targt='_blank'>CICV repository</a>,
+          utilising <a href='https://github.com/mjmammoth/cicv/tree/main/.github/workflows' className={Styles.outsideLink} targt='_blank'>GitHub Actions </a>
+          to build, push and deploy to my <a href='https://github.com/mjmammoth/iac-odroid' className={Styles.outsideLink} targt='_blank'>personal kubernetes cluster</a>.
         </div>
         }
       </section>

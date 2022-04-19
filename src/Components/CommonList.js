@@ -26,7 +26,7 @@ export default class CommonList extends React.Component {
       >
         <div className={mergeClassNames(BulmaCSS.container, BulmaCSS['is-medium'], Styles.commonListContainer)}>
           {items.map((item) => {
-            const { authority, authorityWebSite, authorityMeta, rightSide, title, description, descriptionTags, bullets } = item;
+            const { authority, authorityWebSite, authorityMeta, rightSide, title, description, descriptionTags, bullets, descriptionParagraphs } = item;
             return (
               <div>
                 <div id="item-main" className={mergeClassNames(BulmaCSS.content, Styles.avoidBreakingOnPrint)}>
@@ -45,11 +45,14 @@ export default class CommonList extends React.Component {
                     : null}
                   <p>
                     {descriptionTags && <PureTagList tags={descriptionTags} tagClass='is-info' />}
+                    {descriptionParagraphs
+                      ? descriptionParagraphs.map((paragraph) => { return <p>{paragraph}</p> })
+                    : null}
                     {description}
                   </p>
                 </div>
                 <div id="item-bullets" className={mergeClassNames(BulmaCSS.content, Styles.avoidBreakingOnPrint)}>
-                  {bullets 
+                  {bullets
                     ? bullets.map((bullet) => { return <li>{bullet}</li> })
                     : null}
                 </div>
