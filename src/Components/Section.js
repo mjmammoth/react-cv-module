@@ -23,7 +23,7 @@ export default class Section extends React.Component {
         <div className={mergeClassNames(BulmaCSS.columns)}>
           <div className={mergeClassNames(BulmaCSS['is-full'], BulmaCSS.column)}>
             { (!this.props.hasNoHeader ? true : false) &&
-            <h4 className={mergeClassNames(BulmaCSS.title, Styles.sectionTitle, BulmaCSS['is-size-4'], Styles.avoidBreakingOnPrint)}>
+            <h4 className={mergeClassNames(BulmaCSS.title, BulmaCSS['is-size-4'], Styles.avoidBreakingOnPrint)}>
               <span className={Styles.sectionIcon}>
                 <FontAwesomeIcon icon={['fas', icon]} />
               </span>

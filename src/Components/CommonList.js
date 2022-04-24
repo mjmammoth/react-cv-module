@@ -29,7 +29,7 @@ export default class CommonList extends React.Component {
             const { authority, authorityWebSite, authorityMeta, rightSide, title, description, descriptionTags, bullets, descriptionParagraphs } = item;
             return (
               <div>
-                <div id="item-main" className={mergeClassNames(BulmaCSS.content, Styles.avoidBreakingOnPrint)}>
+                <div id="item-main" className={mergeClassNames(BulmaCSS.content, Styles.avoidBreakingOnPrint, Styles.bottomMargin)}>
                   <div className={mergeClassNames(BulmaCSS.level, BulmaCSS['is-marginless'], BulmaCSS['is-paddingless'])}>
                     <h5 className={mergeClassNames(BulmaCSS.title, BulmaCSS['is-marginless'], BulmaCSS['level-left'], BulmaCSS['is-size-5'])}>{title}
                     </h5>
@@ -49,12 +49,10 @@ export default class CommonList extends React.Component {
                       ? descriptionParagraphs.map((paragraph) => { return <p>{paragraph}</p> })
                     : null}
                     {description}
+                    {bullets
+                      ? bullets.map((bullet) => { return <li>{bullet}</li> })
+                      : null}
                   </p>
-                </div>
-                <div id="item-bullets" className={mergeClassNames(BulmaCSS.content, Styles.avoidBreakingOnPrint)}>
-                  {bullets
-                    ? bullets.map((bullet) => { return <li>{bullet}</li> })
-                    : null}
                 </div>
               </div>
              );
