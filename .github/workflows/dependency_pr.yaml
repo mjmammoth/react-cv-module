@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GH_AT }}
+          ref: ${{ github.event.pull_request.head.ref }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -27,5 +28,3 @@ jobs:
           git add package-lock.json
           git commit -m "#noci updating package-lock.json"
           git push
-      - name: debug
-        run: echo ${{ steps.commit.outputs.stdout || steps.commit.outputs.stderr }}
