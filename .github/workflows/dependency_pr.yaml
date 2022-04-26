@@ -16,6 +16,11 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies1
         run: npm install
-      - name: Install dependencies2
-        run: npm ci
       - run: npm run build --if-present
+      - name: Commit package-lock.json
+        run: |
+          git config --global user.name 'Mark Renovate'
+          git config --global user.email 'mjmarryatt@gmail.com'
+          git add package-lock.json
+          git commit -m "package-lock automated update"
+          git push
