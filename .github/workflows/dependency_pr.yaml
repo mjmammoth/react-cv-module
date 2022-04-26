@@ -19,12 +19,13 @@ jobs:
         run: npm install
       - run: npm run build --if-present
       - name: Commit package-lock.json
+        id: commit
         run: |
-          git checkout ${{ github.event.pull_request.head.ref }}
           git config --global user.name 'Mark Renovate'
           git config --global user.email 'mjmarryatt@gmail.com'
           git status
-          pwd
           git add package-lock.json
           git commit -m "#noci package-lock automated update"
           git push origin ${{ github.event.pull_request.head.ref }}
+      - name: debug
+        run: echo ${{ steps.commit.outputs.stdout }}
