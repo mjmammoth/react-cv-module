@@ -23,11 +23,11 @@ jobs:
       - name: Install dependencies and update package-lock.json
         run: npm install
       - run: npm run build --if-present
-      - name: setup git config
+      - name: Git push synced dependencies
         run: |
           git config --global user.name "Github Actions Bot"
           git config --global user.email "<>"
           git add package-lock.json yarn.lock
           git commit -m "#noci syncing dependencies"
           diff=`git diff --name-only HEAD^ HEAD`
-          if [[ "package-lock.json" =~ $diff ]]; then git push; else echo "Package-lock.json was not updated were updated"; fi
+          if [[ $diff =~ (package-lock.json|yarn.lock) ]]; then git push; else echo "Dependencies not updated"; fi
