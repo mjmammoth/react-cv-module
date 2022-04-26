@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, '#noci') }}
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -19,8 +20,11 @@ jobs:
       - run: npm run build --if-present
       - name: Commit package-lock.json
         run: |
+          git checkout ${{ github.event.pull_request.head.ref }}
           git config --global user.name 'Mark Renovate'
           git config --global user.email 'mjmarryatt@gmail.com'
+          git status
+          pwd
           git add package-lock.json
-          git commit -m "package-lock automated update"
+          git commit -m "#noci package-lock automated update"
           git push origin ${{ github.event.pull_request.head.ref }}
