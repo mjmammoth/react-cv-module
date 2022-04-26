@@ -15,11 +15,12 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Install dependencies1
+      - name: Install dependencies and update package-lock.json
         run: npm install
       - run: npm run build --if-present
       - name: Commit package-lock.json
         id: commit
+        continue-on-error: true
         run: |
           git config --global user.name 'Mark Renovate'
           git config --global user.email 'mjmarryatt@gmail.com'
