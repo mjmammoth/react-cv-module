@@ -10,6 +10,8 @@ jobs:
     if: ${{ !contains(github.event.head_commit.message, '#noci') }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_AT }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -20,14 +22,10 @@ jobs:
       - run: npm run build --if-present
       - name: setup git config
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-      - name: Commit package-lock.json
-        id: commit
-        continue-on-error: true
-        run: |
+          git config --global user.name "Github Actions Bot"
+          git config --global user.email "<>"
           git add package-lock.json
-          git commit -m "#noci package-lock automated update"
-          git push origin ${{ github.event.pull_request.head.ref }}
+          git commit -m "#noci updating package-lock.json"
+          git push
       - name: debug
         run: echo ${{ steps.commit.outputs.stdout || steps.commit.outputs.stderr }}
