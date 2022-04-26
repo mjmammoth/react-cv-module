@@ -23,4 +23,4 @@ jobs:
           git config --global user.email 'mjmarryatt@gmail.com'
           git add package-lock.json
           git commit -m "package-lock automated update"
-          git push
+          git push origin ${GITHUB_REF##*/}
