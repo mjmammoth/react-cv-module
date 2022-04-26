@@ -27,6 +27,7 @@ jobs:
         run: |
           git config --global user.name "Github Actions Bot"
           git config --global user.email "<>"
-          git add package-lock.json
-          git commit -m "#noci updating package-lock.json"
-          git push
+          git add package-lock.json yarn.lock
+          git commit -m "#noci syncing dependencies"
+          diff=`git diff --name-only HEAD^ HEAD`
+          if [[ "package-lock.json" =~ $diff ]]; then git push; else echo "Package-lock.json was not updated were updated"; fi
