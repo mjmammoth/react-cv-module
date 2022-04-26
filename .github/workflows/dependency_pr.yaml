@@ -29,4 +29,4 @@ jobs:
           git commit -m "#noci package-lock automated update"
           git push origin ${{ github.event.pull_request.head.ref }}
       - name: debug
-        run: echo ${{ steps.commit.outputs.stdout }}
+        run: echo ${{ steps.commit.outputs.stdout || steps.commit.outputs.stderr }}
