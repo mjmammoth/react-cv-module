@@ -1,6 +1,6 @@
 {
   "name": "mark-react-cv",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "React-CV is fully customizable and printable CV / Resumee component for React/Gatsby.",
   "author": "mjmammoth",
   "license": "MIT",
@@ -50,8 +50,8 @@
     "react-scripts": "5.0.1",
     "rollup": "2.70.2",
     "rollup-plugin-babel": "3.0.7",
-    "rollup-plugin-commonjs": "9.3.4",
-    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-node-resolve": "3.4.0",
     "rollup-plugin-peer-deps-external": "2.2.4",
     "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-url": "1.4.0"
