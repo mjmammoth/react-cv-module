@@ -8,7 +8,7 @@
 .appContainer {
   padding-top:  30px;
   margin: auto;
-  max-width: 70%;
+  max-width: 960px;
 }
 
 .sectionIcon {
@@ -75,7 +75,7 @@ hr {
 }
 
 body {
-  background-color: #03d2b2;
+  background-color: #062C30;
 }
 
 
