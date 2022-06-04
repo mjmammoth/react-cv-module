@@ -5170,6 +5170,13 @@
   "resolved" "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
   "version" "2.2.0"
 
+"bindings@^1.5.0":
+  "integrity" "sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ=="
+  "resolved" "https://registry.npmjs.org/bindings/-/bindings-1.5.0.tgz"
+  "version" "1.5.0"
+  dependencies:
+    "file-uri-to-path" "1.0.0"
+
 "bl@^4.0.0":
   "integrity" "sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w=="
   "resolved" "https://registry.npmjs.org/bl/-/bl-4.1.0.tgz"
@@ -8643,15 +8650,13 @@
   "resolved" "https://registry.npmjs.org/events/-/events-3.3.0.tgz"
   "version" "3.3.0"
 
-"eventsource@^1.1.0":
-  "integrity" "sha512-VSJjT5oCNrFvCS6igjzPAt5hBzQ2qPBFIbJ03zLI9SE0mxwZpMw6BfJrbFHm1a141AavMEB8JHmBhWAd66PfCg=="
-  "resolved" "https://registry.npmjs.org/eventsource/-/eventsource-1.1.0.tgz"
-  "version" "1.1.0"
-  dependencies:
-    "original" "^1.0.0"
+"eventsource@^2.0.2":
+  "integrity" "sha512-IzUmBGPR3+oUG9dUeXynyNmf91/3zUSJg1lCktzKw47OXuhco54U3r9B7O4XX+Rb1Itm9OZ2b0RkTs10bICOxA=="
+  "resolved" "https://registry.npmjs.org/eventsource/-/eventsource-2.0.2.tgz"
+  "version" "2.0.2"
 
 "eventsource@0.1.6":
-  "integrity" "sha1-Cs7ehJ7X3RzMMsgRuxG5RNTykjI="
+  "integrity" "sha512-bbB5tEuvC+SuRUG64X8ghvjgiRniuA4WlehWbFnoN4z6TxDXpyX+BMHF7rMgZAqoe+EbyNRUbHN0uuP9phy5jQ=="
   "resolved" "https://registry.npmjs.org/eventsource/-/eventsource-0.1.6.tgz"
   "version" "0.1.6"
   dependencies:
@@ -9386,6 +9391,19 @@
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
+
+"fsevents@^1.2.7":
+  "integrity" "sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-1.2.13.tgz"
+  "version" "1.2.13"
+  dependencies:
+    "bindings" "^1.5.0"
+    "nan" "^2.12.1"
+
+"fsevents@^2.3.2", "fsevents@~2.3.2":
+  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
@@ -14051,6 +14069,11 @@
   "resolved" "https://registry.npmjs.org/name-all-modules-plugin/-/name-all-modules-plugin-1.0.1.tgz"
   "version" "1.0.1"
 
+"nan@^2.12.1":
+  "integrity" "sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ=="
+  "resolved" "https://registry.npmjs.org/nan/-/nan-2.15.0.tgz"
+  "version" "2.15.0"
+
 "nanoid@^3.3.1":
   "integrity" "sha512-n6Vs/3KGyxPQd6uO0eH4Bv0ojGSUvuLlIHtC3Y0kEO23YRge8H9x1GCzLn28YX0H66pMkxuaeESFq4tKISKwdw=="
   "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.3.1.tgz"
@@ -14573,7 +14596,7 @@
     "strip-ansi" "^5.2.0"
     "wcwidth" "^1.0.1"
 
-"original@^1.0.0", "original@>=0.0.5":
+"original@>=0.0.5":
   "integrity" "sha512-hyBVl6iqqUOJ8FqRe+l/gS8H+kKYjrEndd5Pm1MfBtsEKA038HkkdbAl/72EAXGyonD/PFsvmVG+EvcIpliMBg=="
   "resolved" "https://registry.npmjs.org/original/-/original-1.0.2.tgz"
   "version" "1.0.2"
@@ -18340,7 +18363,18 @@
     "socket.io-adapter" "~2.1.0"
     "socket.io-parser" "~4.0.3"
 
-"sockjs-client@^1.4.0", "sockjs-client@1.1.4":
+"sockjs-client@^1.4.0", "sockjs-client@^1.5.0":
+  "integrity" "sha512-2g0tjOR+fRs0amxENLi/q5TiJTqY+WXFOzb5UwXndlK6TO3U/mirZznpx6w34HVMoc3g7cY24yC/ZMIYnDlfkw=="
+  "resolved" "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "debug" "^3.2.7"
+    "eventsource" "^2.0.2"
+    "faye-websocket" "^0.11.4"
+    "inherits" "^2.0.4"
+    "url-parse" "^1.5.10"
+
+"sockjs-client@1.1.4":
   "integrity" "sha1-W6vjhrd15M8U51IJEUUmVAFsixI="
   "resolved" "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.1.4.tgz"
   "version" "1.1.4"
@@ -18351,17 +18385,6 @@
     "inherits" "^2.0.1"
     "json3" "^3.3.2"
     "url-parse" "^1.1.8"
-
-"sockjs-client@^1.5.0":
-  "integrity" "sha512-qVHJlyfdHFht3eBFZdKEXKTlb7I4IV41xnVNo8yUKA1UHcPJwgW2SvTq9LhnjjCywSkSK7c/e4nghU0GOoMCRQ=="
-  "resolved" "https://registry.npmjs.org/sockjs-client/-/sockjs-client-1.6.0.tgz"
-  "version" "1.6.0"
-  dependencies:
-    "debug" "^3.2.7"
-    "eventsource" "^1.1.0"
-    "faye-websocket" "^0.11.4"
-    "inherits" "^2.0.4"
-    "url-parse" "^1.5.10"
 
 "sockjs@^0.3.21":
   "integrity" "sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ=="
@@ -19730,10 +19753,10 @@
   "resolved" "https://registry.npmjs.org/type-detect/-/type-detect-4.0.8.tgz"
   "version" "4.0.8"
 
-"type-fest@^0.13.1", "type-fest@^2.5.3", "type-fest@>=0.17.0 <3.0.0":
-  "integrity" "sha512-AiknQSEqKVGDDjtZqeKrUoTlcj7FKhupmnVUgz6KoOKtvMwRGE6hUNJ/nVear+h7fnUPO1q/htSkYKb1pyntkQ=="
-  "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-2.12.1.tgz"
-  "version" "2.12.1"
+"type-fest@^0.13.1":
+  "integrity" "sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg=="
+  "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-0.13.1.tgz"
+  "version" "0.13.1"
 
 "type-fest@^0.16.0":
   "integrity" "sha512-eaBzG6MxNzEn9kiwvtre90cXaNLkmadMWa1zQMs3XORCXNbsH/OewwbxC5ia9dCxIxnTAsSxXJaa/p5y8DlvJg=="
@@ -19764,6 +19787,16 @@
   "integrity" "sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA=="
   "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-0.8.1.tgz"
   "version" "0.8.1"
+
+"type-fest@^2.5.3":
+  "integrity" "sha512-lPfAm42MxE4/456+QyIaaVBAwgpJb6xZ8PRu09utnhPdWwcyj9vgy6Sq0Z5yNbJ21EdxB5dRU/Qg8bsyAMtlcw=="
+  "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-2.13.0.tgz"
+  "version" "2.13.0"
+
+"type-fest@>=0.17.0 <3.0.0":
+  "integrity" "sha512-lPfAm42MxE4/456+QyIaaVBAwgpJb6xZ8PRu09utnhPdWwcyj9vgy6Sq0Z5yNbJ21EdxB5dRU/Qg8bsyAMtlcw=="
+  "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-2.13.0.tgz"
+  "version" "2.13.0"
 
 "type-is@~1.6.18":
   "integrity" "sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g=="
