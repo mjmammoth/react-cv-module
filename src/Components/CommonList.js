@@ -49,9 +49,7 @@ export default class CommonList extends React.Component {
                       ? descriptionParagraphs.map((paragraph) => { return <p>{paragraph}</p> })
                     : null}
                     {description}
-                    {bullets
-                      ? bullets.map((bullet) => { return <li>{bullet}</li> })
-                      : null}
+                    {bullets && <ul> { bullets.map((bullet) => { return <li>{bullet}</li> }) } </ul> }
                   </p>
                 </div>
               </div>
