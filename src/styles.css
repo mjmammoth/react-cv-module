@@ -1,7 +1,7 @@
 
 
 .cvContainer {
-  box-shadow: 0px 8px 20px #0000008f;
+  box-shadow: 0px 8px 2px #ffffff;
   min-height: 500px;
 }
 
@@ -55,6 +55,9 @@
 
 .projectTitle {
   display: inline;
+  padding-bottom: 2px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 
 .sectionContent {
@@ -66,7 +69,7 @@
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid hsl(0, 0%, 71%);
-  max-width: 500px;
+  max-width: 700px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
@@ -75,7 +78,7 @@ hr {
 }
 
 body {
-  background-color: #062C30;
+  background-color: #000000;
 }
 
 .project-group:not(:first-of-type) {
@@ -94,7 +97,12 @@ body {
   }
 
   .avoidBreakingOnPrint {
-    page-break-inside: avoid;
+    page-break-inside: auto;
+  }
+  
+  .pageBreakBefore {
+    page-break-before: always;
+    page-break-after: always;
   }
 
   .branding {

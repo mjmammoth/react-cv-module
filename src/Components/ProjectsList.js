@@ -29,10 +29,10 @@ export default class ProjectsList extends React.Component {
             return (<div className={mergeClassNames(BulmaCSS.container, 'project-group-external', Styles.avoidBreakingOnPrint,  Styles['project-group']) }>
               <div className={mergeClassNames(BulmaCSS.content)}>
                 <div className={mergeClassNames(BulmaCSS['is-marginless'])}>
-                  <h5 className={mergeClassNames(BulmaCSS.title, Styles.companyTitle, BulmaCSS['is-size-5'])}>
+                  <h5 className={mergeClassNames(BulmaCSS.title, Styles.companyTitle, BulmaCSS['is-size-4'])}>
                     {sectionHeader}
                   </h5>
-                  <span className={mergeClassNames(Styles.projectMeta)}> - {description}</span>
+                  <span className={mergeClassNames(Styles.projectMeta)}>{description}</span>
                 </div>
               </div>
               <hr className={Styles.divider} />

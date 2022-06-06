@@ -29,8 +29,8 @@ export default class CommonList extends React.Component {
             const { authority, authorityWebSite, authorityMeta, rightSide, title, description, descriptionTags, bullets, descriptionParagraphs } = item;
             return (
               <div>
-                <div id="item-main" className={mergeClassNames(BulmaCSS.content, Styles.avoidBreakingOnPrint, Styles.bottomMargin)}>
-                  <div className={mergeClassNames(BulmaCSS.level, BulmaCSS['is-marginless'], BulmaCSS['is-paddingless'])}>
+                <div id="item-main" className={mergeClassNames(BulmaCSS.content, Styles.bottomMargin)}>
+                  <div className={mergeClassNames(BulmaCSS.level, Styles.avoidBreakingOnPrint, BulmaCSS['is-marginless'], BulmaCSS['is-paddingless'])}>
                     <h5 className={mergeClassNames(BulmaCSS.title, BulmaCSS['is-marginless'], BulmaCSS['level-left'], BulmaCSS['is-size-5'])}>{title}
                     </h5>
                     <span className={mergeClassNames(BulmaCSS['level-right'])}>{rightSide}</span>
